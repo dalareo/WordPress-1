@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash -e
 sudo apt-get update -y
 sleep 10
 sudo apt-get install git apache2 php libapache2-mod-php php-mcrypt php-mysql apt-utils nano curl wget mysql-client -y
