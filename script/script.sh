@@ -5,4 +5,4 @@ sudo apt-get install apache2 php libapache2-mod-php php-mcrypt php-mysql mysql-c
 sudo cp -r /deployTemp/drop/. /var/www/html/
 sudo chown -R www-data.www-data /var/www/html
 sudo chmod -R 775 /var/www/html
-sudo cp ./wp-config.php /var/www/html/
+sudo cp /var/www/html/script/wp-config.php /var/www/html/wp-config.php
