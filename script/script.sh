@@ -1,15 +1,5 @@
 #!/bin/bash -e
-# desactivamos el apt-daily
-systemctl stop apt-daily.service
-systemctl kill --kill-who=all apt-daily.service
-
-# wait until `apt-get updated` has been killed
-while ! (systemctl list-units --all apt-daily.service | fgrep -q dead)
-do
-  sleep 1;
-done
-
-# procedemos a instalar los paquetes y archivos necesarios para la instalación
+sleep 80
 sudo apt-get update -y
 sudo apt-get install apache2 php libapache2-mod-php php-mcrypt php-mysql mysql-client -y
 sudo cp -r /deployTemp/drop/. /var/www/html/
