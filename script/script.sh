@@ -1,5 +1,5 @@
 #!/bin/bash -e
-sleep 80
+sleep 180
 sudo apt-get update -y
 sudo apt-get install apache2 php libapache2-mod-php php-mcrypt php-mysql mysql-client -y
 sudo cp -r /deployTemp/drop/. /var/www/html/
