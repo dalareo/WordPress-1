@@ -1,5 +1,5 @@
 #!/bin/bash -e
-echo "No problem reading $DBPASSWORD"
+echo "No problem reading $dbpassword"
 sleep 180
 sudo apt-get update -y
 sudo apt-get install apache2 php libapache2-mod-php php-mcrypt php-mysql mysql-client -y
