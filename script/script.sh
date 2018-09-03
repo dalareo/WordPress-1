@@ -29,9 +29,6 @@ if [ -f "/var/www/html/wp-content/index.php" ]; then
     find /deployTemp/drop/. -mindepth 1 -maxdepth 1 -type d ! -regex '\(.*wp-content\)' -exec sudo cp -r {} /var/www/html/ \;
 fi
 
-sudo chown -R www-data.www-data /var/www/html
-sudo chmod -R 775 /var/www/html
-
 # Creamos la base de datos y el usuario que la usará
 mysql -h $4.mysql.database.azure.com -u $5@$hostname -p"$1" -e "CREATE DATABASE wordpress; CREATE USER 'wordpress'@'%' IDENTIFIED BY '${1}'; GRANT ALL PRIVILEGES ON wordpress . * TO 'wordpress'@'%'; FLUSH PRIVILEGES;"
 
@@ -42,3 +39,5 @@ sudo sed -i '25 a define( 'DB_USER', 'wordpress@$4' );' /var/www/html/wp-config.
 sudo sed -i '28 a define( 'DB_PASSWORD', '$1' );' /var/www/html/wp-config.php
 sudo sed -i '31 a define( 'DB_HOST', '$4.mysql.database.azure.com' );' /var/www/html/wp-config.php
 
+sudo chown -R www-data.www-data /var/www/html
+sudo chmod -R 775 /var/www/html
