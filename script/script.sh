@@ -1,5 +1,4 @@
 #!/bin/bash -e
-DBPASSWORD=$1
 echo $DBPASSWORD
 sleep 180
 sudo apt-get update -y
