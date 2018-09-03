@@ -39,6 +39,6 @@ mysql -h $4.mysql.database.azure.com -u $5@$hostname -p"$1" -e "CREATE DATABASE 
 sudo cp /var/www/html/script/wp-config.example.php /var/www/html/wp-config.php
 sudo rm /var/www/html/index.html
 sudo sed -i '25 a define( 'DB_USER', 'wordpress@$4' );' /var/www/html/wp-config.php
-sudo sed -i '27 a define( 'DB_PASSWORD', '$1' );' /var/www/html/wp-config.php
-sudo sed -i '29 a define( 'DB_HOST', '$4.mysql.database.azure.com' );' /var/www/html/wp-config.php
+sudo sed -i '28 a define( 'DB_PASSWORD', '$1' );' /var/www/html/wp-config.php
+sudo sed -i '31 a define( 'DB_HOST', '$4.mysql.database.azure.com' );' /var/www/html/wp-config.php
 
