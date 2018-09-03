@@ -37,7 +37,7 @@ fi
 
 # Creamos la base de datos y el usuario que la usará
 
-mysql -h $4.mysql.database.azure.com -u $5@$hostname -p"$1" -e "CREATE DATABASE wordpress; CREATE USER 'wordpress'@'%' IDENTIFIED BY '${1}'; GRANT ALL PRIVILEGES ON wordpress . * TO 'wordpress'@'%'; FLUSH PRIVILEGES;"
+mysql -h $4.mysql.database.azure.com -u $5@$4 -p"$1" -e "CREATE DATABASE wordpress; CREATE USER 'wordpress'@'%' IDENTIFIED BY '${1}'; GRANT ALL PRIVILEGES ON wordpress . * TO 'wordpress'@'%'; FLUSH PRIVILEGES;"
 
 # Insertamos la información en el archivo wp-config.php
 
