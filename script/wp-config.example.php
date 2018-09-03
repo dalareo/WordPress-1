@@ -23,13 +23,10 @@
 define( 'DB_NAME', 'wordpress' );
 
 /** MySQL database username */
-define( 'DB_USER', 'testvmss@testvmss' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'ubuntuVm2018' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'testvmss.mysql.database.azure.com' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
