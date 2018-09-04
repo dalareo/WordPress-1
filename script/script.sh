@@ -16,10 +16,8 @@ if [ ! -d /etc/smbcredentials ]; then
 fi
 
 if [ ! -f /etc/smbcredentials/storageaccountname.cred ]; then
-    sudo touch "/etc/smbcredentials/storageaccountname.cred"
-    sudo bash -c 'echo "#fist line" >> /etc/smbcredentials/storageaccountname.cred'
-    sudo sed -i '1 a username=$2' /etc/smbcredentials/storageaccountname.cred
-    sudo sed -i '2 a password=$3' /etc/smbcredentials/storageaccountname.cred
+    sudo bash -c 'echo 'username=$2' >> /etc/smbcredentials/storageaccountname.cred'
+    sudo bash -c 'echo 'password=$3' >> /etc/smbcredentials/storageaccountname.cred'
 fi
 
 sudo chmod 600 /etc/smbcredentials/storageaccountname.cred
