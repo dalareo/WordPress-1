@@ -23,7 +23,7 @@ if [ ! -f /etc/smbcredentials/storageaccountname.cred ]; then
 fi
 
 sudo chmod 600 /etc/smbcredentials/storageaccountname.cred
-sudo bash -c 'echo '//$2.file.core.windows.net/wp-content' /var/www/html/wp-content cifs nofail,vers=3.0,credentials=/etc/smbcredentials/storageaccountname.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+sudo bash -c 'echo '//$2.file.core.windows.net/wp-content' /var/www/html/wp-content cifs nofail,vers=3.0,credentials=/etc/smbcredentials/storageaccountname.cred,dir_mode=0777,file_mode=0777,serverino >> /etc/fstab'
 
 # Copiar archivos del programa
 
