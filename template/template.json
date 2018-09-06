@@ -433,4 +433,16 @@
                                     "threshold": "[parameters('scaleInCPUPercentageThreshold')]"
                                 },
                                 "scaleAction": {
- 
+                                    "direction": "Decrease",
+                                    "type": "ChangeCount",
+                                    "value": "[parameters('scaleInInterval')]",
+                                    "cooldown": "PT1M"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ] 
+}
