@@ -77,7 +77,8 @@ function add_metadata( $meta_type, $object_id, $meta_key, $meta_value, $unique =
 	if ( $unique && $wpdb->get_var(
 		$wpdb->prepare(
 			"SELECT COUNT(*) FROM $table WHERE meta_key = %s AND $column = %d",
-			$meta_key, $object_id
+			$meta_key,
+			$object_id
 		)
 	) ) {
 		return false;
@@ -101,7 +102,8 @@ function add_metadata( $meta_type, $object_id, $meta_key, $meta_value, $unique =
 	do_action( "add_{$meta_type}_meta", $object_id, $meta_key, $_meta_value );
 
 	$result = $wpdb->insert(
-		$table, array(
+		$table,
+		array(
 			$column      => $object_id,
 			'meta_key'   => $meta_key,
 			'meta_value' => $meta_value,
@@ -148,7 +150,8 @@ function add_metadata( $meta_type, $object_id, $meta_key, $meta_value, $unique =
  * @param mixed  $meta_value Metadata value. Must be serializable if non-scalar.
  * @param mixed  $prev_value Optional. If specified, only update existing metadata entries with
  *                           the specified value. Otherwise, update all entries.
- * @return int|bool Meta ID if the key didn't exist, true on successful update, false on failure.
+ * @return int|bool The new meta field ID if a field with the given key didn't exist and was
+ *                  therefore added, true on successful update, false on failure.
  */
 function update_metadata( $meta_type, $object_id, $meta_key, $meta_value, $prev_value = '' ) {
 	global $wpdb;
